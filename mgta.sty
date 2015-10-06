@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%
+\setlength{\topmargin}{20mm} \setlength{\textheight}{20.5cm}
+\setlength{\textwidth}{13cm} 
+\setlength{\oddsidemargin}{-5.4mm}
+\setlength{\evensidemargin}{-10.4mm} 
+\voffset=-2.54cm
+%%%%%%%%% %%%%%%%%%
+
+
+
+\newcommand{\n}[1]{\eqno(#1)}
+\pagestyle{headings}
+\setcounter{MaxMatrixCols}{10}
+
+\unitlength=1mm
+
+\def\ppage#1{\gdef\@ppage{#1}}
+
+%%MACRO FOR COPYRIGHT BLOCK
+\newcommand{\smalllineskip}{\baselineskip=10pt}
+\newcommand{\copyrightheading}[1]
+{\vspace*{-2.5cm}\smalllineskip
+\par\hbox to \textwidth{
+{\scriptsize Математическая Теория Игр и е\"е Приложения, т.2, в.3, \@ppage } \hspace{2pt
+plus1fill} {\scriptsize  }}
+
+%\par\hbox to \textwidth{
+%{\scriptsize  \copyright\kern2pt Изд-во Карельского научного центра
+%РАН} \hspace{2pt plus1fill} {\scriptsize }} 
+}
+%MACRO FOR COPYRIGHT BLOCK
+
+
+\renewcommand{\baselinestretch}{1.1}
+
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+\renewcommand{\section}[1]{\refstepcounter{section}\setcounter{equation}{0} {\bigskip\noindent\bfseries
+\thesection. #1 }\par \medskip}
+\renewcommand{\subsection}[1]{\refstepcounter{subsection} {\bigskip\noindent\bfseries
+\thesubsection. #1 }\par \medskip}
+
+\newtheoremstyle{mythm}{2ex}{1ex}{\itshape}{}{\bfseries}{.}{1ex}{}
+\newtheoremstyle{notes}{2ex}{1ex}{\upshape}{}{\itshape}{.}{1ex}{}
+\theoremstyle{mythm}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}{Лемма}[section]
+\newtheorem{utver}{Утверждение}[section]
+\newtheorem{definition}{Определение}[section]
+\newtheorem{corollary}{Следствие}[section]
+\newtheorem{proposition}{Предложение}[section]
+\newtheorem{assumption}{Предположение}[section]
+\newtheorem{axiom}{Аксиома}[section]
+\theoremstyle{notes}
+\newtheorem{note}{Замечание}[section]
+\newtheorem{example}{Пример}[section]
+
+
+
+\newcommand{\fcaption}[1]{
+        \refstepcounter{figure}
+           {\begin{center}
+         Рисунок~\thefigure.~#1
+            \end{center}}
+}
+
+
+%%  Макросы для определения заголовка
+\def\abstr#1{\gdef\@abstr{\renewcommand{\abstractname}{}
+\begin{abstract}     
+{\small #1}
+\end{abstract}}} %% текст аннотации 
+\def\keywords#1{\gdef\@keywords{\textit{Ключевые слова}: #1}} %% ключевые слова 
+
+\newcommand{\makeinfo}{%
+\@abstr
+\@keywords.
+}
+
+
+
+%%  Макросы для определения заголовка
+\def\engtitle#1{\gdef\@engtitle{#1}} %% название статьи на английском
+\def\engauthors#1{\gdef\@engauthors{#1}} %% авторы на английском
+\def\engabstract#1{\gdef\@engabstract{\parbox{130mm}{{\normalsize \textit{Abstract}: #1}}}} %% текст аннотации на английском
+\def\engkeywords#1{\gdef\@engkeywords{#1}} %% ключевые слова на английском
+
+
+
+\newcommand{\makeenginfo}{%
+\begin{flushleft}
+\large\MakeUppercase{{{\@engtitle}}}\\[12pt]
+\normalsize\normalfont
+\@engauthors\\[12pt]
+\@engabstract\\[12pt]
+\end{flushleft}
+\textit{Keywords}: \@engkeywords.
+}
+
